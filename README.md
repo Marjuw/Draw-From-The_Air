@@ -12,6 +12,7 @@ Mediapipe must be installed for this project. There are several ways to install 
 
 # Structure and how to Use the App 
 If you have installed Mediapipe and open this folder in Android Studio there are a couple files wich are different from the original Mediapipe folder. To demonstrate, I have marked them in the following folder structure: 
+![WhatsApp Image 2021-10-11 at 17 35 32](https://user-images.githubusercontent.com/33716855/136821724-90cc9b52-8869-4f60-a734-80f7d248f076.jpeg)
 
 The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time. In order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file.
 
