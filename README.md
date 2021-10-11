@@ -5,15 +5,16 @@ This Repository is about an App, where you can paint from the air using the came
 
 
 # Use of technologies
-The hand tracking for this project was used the Hand tracking solution from Mediapipe (https://google.github.io/mediapipe/) in Android Studio. The line from this tracked coordinates was created with With OpenGL ES. (https://developer.android.com/guide/topics/graphics/opengl). The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time.
--Mediapipe und Open GL Beziehung erklären. 
-
+The hand tracking for this project was used the Hand tracking solution from Mediapipe (https://google.github.io/mediapipe/) in Android Studio. The line from this tracked coordinates was created with With OpenGL ES (https://developer.android.com/guide/topics/graphics/opengl).
 
 # How to Install 
-Mediapipe must be installed for this project. There are several ways to install it in Android Studio. On the one hand, Mediapipe must be installed for the respective operating system. Please note that the installation is not possible under native Windows (see: https: //google.github.io/mediapipe/getting_started/install.html#installing-on-debian-and-ubuntu). Alternatively, all Windows users can install via a virtual machine with a Linux operating system.To do this, the installation guide (https://google.github.io/mediapipe/getting_started/install.html#installing-on-debian-and-ubuntu) and possibly the associated troubleshooting (https://google.github.io/mediapipe/getting_started/troubleshooting.html) for the Mediapipe installation under Debian or Ubuntu has to be done. The Mediapipe project folder is already included in this repository. There you will also find the additionally created OGL classes, which is why a download of the original Mediapipe folder is replaced by this. Furthermore, Mediapipe must be integrated into Android Studio, so that in this case the hand tracking application can be executed. This is done under the guidance of Mediapipe: https://google.github.io/mediapipe/getting_started/android.html, or under ’Using MediaPipe withBazel’: https://gitee.com/chenpingv587/mediapipe/blob/master/mediapipe/docs/install.md. 
+Mediapipe must be installed for this project. There are several ways to install it in Android Studio. On the one hand, Mediapipe must be installed for the respective operating system. Please note that the installation is not possible under native Windows (see: https: //google.github.io/mediapipe/getting_started/install.html#installing-on-debian-and-ubuntu). Alternatively, all Windows users can install via a virtual machine with a Linux operating system.To do this, the installation guide (https://google.github.io/mediapipe/getting_started/install.html#installing-on-debian-and-ubuntu) and possibly the associated troubleshooting (https://google.github.io/mediapipe/getting_started/troubleshooting.html) for the Mediapipe installation under Debian or Ubuntu has to be done. The Mediapipe project folder is already included in this repository. There you will also find the additionally created OpenGL classes, which is why a download of the original Mediapipe folder is replaced by this. Furthermore, Mediapipe must be integrated into Android Studio, so that in this case the hand tracking application can be executed. This is done under the guidance of Mediapipe: https://google.github.io/mediapipe/getting_started/android.html, or under ’Using MediaPipe withBazel’: https://gitee.com/chenpingv587/mediapipe/blob/master/mediapipe/docs/install.md. 
 
-# How to Use the App 
+# Structure and how to Use the App 
  Die jeweiligen Klassen von OpenGl heißen 
+The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time. In order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file.
+
+ -Mediapipe und Open GL Beziehung erklären. 
  
  
  Allgemeiner Stand:
