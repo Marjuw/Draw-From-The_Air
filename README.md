@@ -18,10 +18,12 @@ If you have installed Mediapipe and open this folder in Android Studio there are
 ![Screen_Ordnerstruktur_2](https://user-images.githubusercontent.com/33716855/136833982-86e4dad6-925e-4d5a-a1d0-7f717b6f9160.jpg)
 
 
-The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time. In order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file.
+The OpenGlView and the ParticleRenderer file is about to draw the line with OpenGL ES. They had to split because in order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file (ausführlicher erklären): 
 
- -Mediapipe und Open GL Beziehung erklären. 
- 
+![Screen_XML](https://user-images.githubusercontent.com/33716855/136933920-66498d6c-cd8d-4fab-bd1a-ba6e57204db5.jpeg)
+
+The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time. The processing and sending of the live coordinates happens in the MainActivity file of the handtrackinggpu folder. In the Particlerenderer class the coordinates are received and processed to the corresponding drawing line.
+
  
  Allgemeiner Stand:
 -malen nur auf einer Hand gleichzeitig möglich, sonst ist Kalibrierung zu Index 8 überfordert (Mediapipe unterschiedet nicht zwischen Index der linken und rechten Hand)
