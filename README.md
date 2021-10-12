@@ -25,7 +25,7 @@ The OpenGlView and the ParticleRenderer file is about to draw the line with Open
 The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time. The processing and sending of the live coordinates happens in the MainActivity file of the handtrackinggpu folder. In the Particlerenderer class the coordinates are received and processed to the corresponding drawing line.
 
  
-# How to Use the App 
+# How to use the App 
 If you run the app like in the Mediapipe installation guide for android Studio described, you have to note the following: 
 -Currently the drawing is only possible to one Hand at the same time. If you take two hands in the camera the calibration of the fingerpoints will be 
 overstrained because Mediapipe dont make a dirfference between the index from the left or the right hand.
@@ -37,13 +37,5 @@ overstrained because Mediapipe dont make a dirfference between the index from th
 6. The sorroundings of the camera view is important. For example if you show your face, mediapipe will analyse ist und sometimes tracked as hand.
 You get a good result when you lie down your smart device and onyl show one Hand in the camera, during you stretch the index Finger.
 
-#  What did I learn?
-
-#  Vision:
--Zwar werden 3D Koordinaten verarbeitet, jedoch müsste für eine entsprechende dreidimensionale Darstellung in einem AR Kontext vermutlich die Kameraposition von OpenGL ES angepasst werden.
--Some of the challenges you faced and features you hope to implement in the future.
-
-Aktuell ohne virtuelle Kamera spielt die Z Koordinate keine Rolle (ausprobiert mit Linien, die ihre Z Koordinate ändern. Die Linien verändert sich nicht). Wenn die virtuelle GL Kamera aktiviert wäre und z funktioniert, müsste diese sich dann wahrscheinlich in der Z Achse mit den Z Kooridnate des Fingers mitbewegen, damit die Linie überhaupt zu sehen wäre. Dann wäre allerdings nur eine Linie zu sehen wo sie aktuell gemalt wird und alles was in der z Achse davor liegt. Sobald der Finger wieder näher kommt würden alle dahinterliegenden Zeichnungen nicht dargestellt werden, also nicht mehr im virtuellen Raum zu sehen...
-Also müsste die virtuelle Kamera von der anderen Seite (die Seite wie auch die echte Kamera ist) betrachten. Nur würden dann die Zeichnungen spiegelverkerhrt dargestellt werden. Hierfür müssten die Zeichnungen spiegelverkehrt berechnet werden, damit der Nutzer der App diese wiederrum richtig sieht. 
--Bei gesetzter Kamera ist die Z Achse bei getesteten Linien dann die nähe oder entfernung der Linie. Die Linie könnte dementsprechend größer (länger)  oder kleiner (kürzer) erschienen, da sie weiter weg oder näher an der Kamera dran ist. 
--Dieses Phänomen zeigt sich auch bei der Live Übertragung wieder (vgl. mit z und ohne Z Koordinaten). Allerdings schwer zu erkennen, da zusätzlich Kamera Position nicht richtig.
+#  3D drawing:
+Although 3D coordinates are processed, the virtual camera position of OpenGL ES would probably have to be adapted for a corresponding three-dimensional display in an AR context. 
