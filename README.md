@@ -10,7 +10,7 @@ The hand tracking for this project was used the Hand tracking solution from Medi
 # How to Install 
 Mediapipe must be installed for this project. There are several ways to install it in Android Studio. On the one hand, Mediapipe must be installed for the respective operating system. Please note that the installation is not possible under native Windows (see: https: //google.github.io/mediapipe/getting_started/install.html#installing-on-debian-and-ubuntu). Alternatively, all Windows users can install via a virtual machine with a Linux operating system.To do this, the installation guide (https://google.github.io/mediapipe/getting_started/install.html#installing-on-debian-and-ubuntu) and possibly the associated troubleshooting (https://google.github.io/mediapipe/getting_started/troubleshooting.html) for the Mediapipe installation under Debian or Ubuntu has to be done. The Mediapipe project folder is already included in this repository. There you will also find the additionally created OpenGL classes, which is why a download of the original Mediapipe folder is replaced by this. Furthermore, Mediapipe must be integrated into Android Studio, so that in this case the hand tracking application can be executed. This is done under the guidance of Mediapipe: https://google.github.io/mediapipe/getting_started/android.html, or under ’Using MediaPipe withBazel’: https://gitee.com/chenpingv587/mediapipe/blob/master/mediapipe/docs/install.md. 
 
-# Structure and how to Use the App 
+# Structure  
 If you have installed Mediapipe and open this folder in Android Studio there are a couple files wich are different from the original Mediapipe folder. To demonstrate, I have marked them in the following folder structure: 
 
 ![Screen_Ordnerstruktur](https://user-images.githubusercontent.com/33716855/136826917-05ae551c-7c39-46c7-aa81-42aeffe3ff17.jpg)
@@ -25,10 +25,11 @@ The OpenGlView and the ParticleRenderer file is about to draw the line with Open
 The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real time. The processing and sending of the live coordinates happens in the MainActivity file of the handtrackinggpu folder. In the Particlerenderer class the coordinates are received and processed to the corresponding drawing line.
 
  
- Allgemeiner Stand:
--malen nur auf einer Hand gleichzeitig möglich, sonst ist Kalibrierung zu Index 8 überfordert (Mediapipe unterschiedet nicht zwischen Index der linken und rechten Hand)
--Instant malen ohne absetzen aktuell nur (evtl zukünftig nur dann, wenn nur der Zeigefinger ausgestreckt wird)
--draw reset durch Button
+# How to Use the App 
+If you run the app like in the Mediapipe installation guide for android Studio described, you have to note the following: 
+-Currently the drawing is only possible one Hand at the same time. If you take two hands in the camera the calibration of the fingerpoints will be 
+overstrained because Mediapipe dont make a dirfference between the index from the left or the right hand.
+-The current status of this project is that you draw instant and without dropping. There is only added a refresh button, where you can delete the drawed line if you push it.
 -Malen noch schwierig, da:
 1. sehr dünne Linie
 2. Malen ohne absetzen 
