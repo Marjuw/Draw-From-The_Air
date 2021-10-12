@@ -27,27 +27,23 @@ The tracked 3D coordinates from Mediapipe are transferred to OpenGL ES in real t
  
 # How to Use the App 
 If you run the app like in the Mediapipe installation guide for android Studio described, you have to note the following: 
--Currently the drawing is only possible one Hand at the same time. If you take two hands in the camera the calibration of the fingerpoints will be 
+-Currently the drawing is only possible to one Hand at the same time. If you take two hands in the camera the calibration of the fingerpoints will be 
 overstrained because Mediapipe dont make a dirfference between the index from the left or the right hand.
--The current status of this project is that you draw instant and without dropping. There is only added a refresh button, where you can delete the drawed line if you push it.
--Malen noch schwierig, da:
-1. sehr dünne Linie
-2. Malen ohne absetzen 
-3. Finger in der Luft bewegen (meistens kleine bewegungen schon einfluss) 
-4. Kamera verfolgt auf y an rändern ungenauer (bzw. nicht gleichmäßig)
-5. Evtl Live Werte von mediapipe in angegebener Frequenz nicht immer ganz optimiert 
-6. Wenn Mediapipe andere Objekte wie z.b das Gesicht ständig analysiert und ausversehen kurz als Hand sieht
-=> Am besten das Smartphone abstellen und nur die Hand in die Kamera halten, während der Index-Finger ausgestreckt ist
-7. Beide Hände funktionieren nicht, da der Index der Fingerspitze daurhaft springt und nicht zwischen rechter und linker Hand unterschiedet
--linie Dicker ? (Width max =1.0, ansonsten muss man mit eigenen Rechtecken Arbeiten und dort die größe manuell eingeben)
--malen in 3D (OGL stellt 3D nicht dar?): 
-Aktuell ohne virtuelle Kamera spielt die Z Koordinate keine Rolle (ausprobiert mit Linien, die ihre Z Koordinate ändern. Die Linien verändert sich nicht). Wenn die virtuelle GL Kamera aktiviert wäre und z funktioniert, müsste diese sich dann wahrscheinlich in der Z Achse mit den Z Kooridnate des Fingers mitbewegen, damit die Linie überhaupt zu sehen wäre. Dann wäre allerdings nur eine Linie zu sehen wo sie aktuell gemalt wird und alles was in der z Achse davor liegt. Sobald der Finger wieder näher kommt würden alle dahinterliegenden Zeichnungen nicht dargestellt werden, also nicht mehr im virtuellen Raum zu sehen...
-Also müsste die virtuelle Kamera von der anderen Seite (die Seite wie auch die echte Kamera ist) betrachten. Nur würden dann die Zeichnungen spiegelverkerhrt dargestellt werden. Hierfür müssten die Zeichnungen spiegelverkehrt berechnet werden, damit der Nutzer der App diese wiederrum richtig sieht. 
--Bei gesetzter Kamera ist die Z Achse bei getesteten Linien dann die nähe oder entfernung der Linie. Die Linie könnte dementsprechend größer (länger)  oder kleiner (kürzer) erschienen, da sie weiter weg oder näher an der Kamera dran ist. 
--Dieses Phänomen zeigt sich auch bei der Live Übertragung wieder (vgl. mit z und ohne Z Koordinaten). Allerdings schwer zu erkennen, da zusätzlich Kamera Position nicht richtig.
+-The drawing could be difficult sometimes. This are the reasons: 
+1. The line is very slim. The width of the glLine in OpenGL ES is at maximum (see at the ParticleRender Class).
+2. The current status of this project is that you draw instant and without dropping. There is only a refresh button added, where you can delete the drawed line if you push it (see the green button on the first gif).
+3. The drawing with the finger in the air could takes getting used to.
+5. The drawing is addicted to the correct Hand tracking of mediapipe.
+6. The sorroundings of the camera view is important. For example if you show your face, mediapipe will analyse ist und sometimes tracked as hand.
+You get a good result when you lie down your smart device and onyl show one Hand in the camera, during you stretch the index Finger.
 
 #  What did I learn?
 
 #  Vision:
 -Zwar werden 3D Koordinaten verarbeitet, jedoch müsste für eine entsprechende dreidimensionale Darstellung in einem AR Kontext vermutlich die Kameraposition von OpenGL ES angepasst werden.
 -Some of the challenges you faced and features you hope to implement in the future.
+
+Aktuell ohne virtuelle Kamera spielt die Z Koordinate keine Rolle (ausprobiert mit Linien, die ihre Z Koordinate ändern. Die Linien verändert sich nicht). Wenn die virtuelle GL Kamera aktiviert wäre und z funktioniert, müsste diese sich dann wahrscheinlich in der Z Achse mit den Z Kooridnate des Fingers mitbewegen, damit die Linie überhaupt zu sehen wäre. Dann wäre allerdings nur eine Linie zu sehen wo sie aktuell gemalt wird und alles was in der z Achse davor liegt. Sobald der Finger wieder näher kommt würden alle dahinterliegenden Zeichnungen nicht dargestellt werden, also nicht mehr im virtuellen Raum zu sehen...
+Also müsste die virtuelle Kamera von der anderen Seite (die Seite wie auch die echte Kamera ist) betrachten. Nur würden dann die Zeichnungen spiegelverkerhrt dargestellt werden. Hierfür müssten die Zeichnungen spiegelverkehrt berechnet werden, damit der Nutzer der App diese wiederrum richtig sieht. 
+-Bei gesetzter Kamera ist die Z Achse bei getesteten Linien dann die nähe oder entfernung der Linie. Die Linie könnte dementsprechend größer (länger)  oder kleiner (kürzer) erschienen, da sie weiter weg oder näher an der Kamera dran ist. 
+-Dieses Phänomen zeigt sich auch bei der Live Übertragung wieder (vgl. mit z und ohne Z Koordinaten). Allerdings schwer zu erkennen, da zusätzlich Kamera Position nicht richtig.
