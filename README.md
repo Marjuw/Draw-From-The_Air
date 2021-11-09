@@ -22,7 +22,7 @@ You can find this marked files in this Repo folder called 'Changed_and_added_fil
 
 The OpenGlView and the ParticleRenderer file is about to draw the line with OpenGL ES. They was added and had to split because in order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file:
 
-![Screen_XML](https://user-images.githubusercontent.com/33716855/136933920-66498d6c-cd8d-4fab-bd1a-ba6e57204db5.jpeg)
+![Screen_Ordnerstruktur](https://user-images.githubusercontent.com/33716855/140933264-28b1fd82-c8fe-4bbf-861c-b69e929c67ad.jpg)
 
 An GLSurfaceView expects an default constructor, which the original construction of the OpenGL ES Activity Class does not have. Only the inner class 'MyGLSurfaceView' has the required constructor. Because of that this part was outsourced.  
 
