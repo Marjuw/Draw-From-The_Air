@@ -18,7 +18,7 @@ If you have installed Mediapipe and open this folder there are a couple files wi
 ![Screen_Ordnerstruktur_2](https://user-images.githubusercontent.com/33716855/136833982-86e4dad6-925e-4d5a-a1d0-7f717b6f9160.jpg)
 
 
-You can find this marked files in this Repo folder called 'Changed_and_added_files'. You have to change and add them to the original Mediapipe folder.
+You can find this marked files in this Repo folder called 'Changed_and_added_files'. You have to replace and add them to the original Mediapipe folder.
 
 The OpenGlView and the ParticleRenderer file is about to draw the line with OpenGL ES. They was added and had to split because in order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file:
 
