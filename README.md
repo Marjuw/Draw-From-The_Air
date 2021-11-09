@@ -13,7 +13,7 @@ Mediapipe must be installed for this project. There are several ways to install 
 # Structure  
 If you have installed Mediapipe and open this folder there are a couple files wich are different from the original Mediapipe folder. To demonstrate, I have marked them in the following folder structure: 
 
-![Screen_Ordnerstruktur](https://user-images.githubusercontent.com/33716855/136826917-05ae551c-7c39-46c7-aa81-42aeffe3ff17.jpg)
+![Screen_Ordnerstruktur](https://user-images.githubusercontent.com/33716855/140933264-28b1fd82-c8fe-4bbf-861c-b69e929c67ad.jpg)
 
 ![Screen_Ordnerstruktur_2](https://user-images.githubusercontent.com/33716855/136833982-86e4dad6-925e-4d5a-a1d0-7f717b6f9160.jpg)
 
@@ -22,7 +22,7 @@ You can find this marked files in this Repo folder called 'Changed_and_added_fil
 
 The OpenGlView and the ParticleRenderer file is about to draw the line with OpenGL ES. They was added and had to split because in order to display the drawing view of OpenGL in the open camera from Mediapipe, a GLView was created in the layout of the activity Main XML file:
 
-![Screen_Ordnerstruktur](https://user-images.githubusercontent.com/33716855/140933264-28b1fd82-c8fe-4bbf-861c-b69e929c67ad.jpg)
+![Screen_XML_klein](https://user-images.githubusercontent.com/33716855/140933535-a56673ad-07da-402e-93fb-b0c96c7b2820.jpg)
 
 An GLSurfaceView expects an default constructor, which the original construction of the OpenGL ES Activity Class does not have. Only the inner class 'MyGLSurfaceView' has the required constructor. Because of that this part was outsourced.  
 
