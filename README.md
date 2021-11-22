@@ -42,4 +42,4 @@ overstrained because Mediapipe dont make a dirfference between the index from th
 You get a good result when you lie down your smart device and onyl show one Hand in the camera, during you stretch the index Finger.
 
 #  3D drawing:
-Although 3D coordinates are processed, the virtual camera position of OpenGL ES would probably have to be adapted for a corresponding three-dimensional display in an AR context. 
+Although 3D coordinates are processed, The drawing is currently viewed from above. The virtual camera position of OpenGL ES would probably have to be adapted for a corresponding three-dimensional display. Another possibility to represent 3D is the addition of augmented reality.
