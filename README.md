@@ -43,3 +43,6 @@ You get a good result when you lie down your smart device and onyl show one Hand
 
 #  3D drawing:
 Although 3D coordinates are processed, The drawing is currently viewed from above. The virtual camera position of OpenGL ES would probably have to be adapted for a corresponding three-dimensional display. Another possibility to represent 3D is the addition of augmented reality.
+
+# Rights: 
+This project is considered open source and can therefore be freely expanded or be used for inspiration.
